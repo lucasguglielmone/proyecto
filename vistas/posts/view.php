@@ -8,12 +8,11 @@ foreach ($posts as $post) {
 }*/
 
 
-public function displayPost($request){
+function displayPost($request){
     $title = $request->title;
     $description = $request->description;
     $body = $request->body;
-    $date = $request->created_at
-
+    $date = $request->created_at;
     $post = <<<com   
         <div class="post-element">
             <img src="" alt="">
