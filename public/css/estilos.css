@@ -305,3 +305,14 @@ body {
     border: none;
     text-decoration: none;
 }
+
+.post-container {
+    width: 90%;
+    padding-left: 2.5%;
+    display: inline-flex;
+}
+.post {
+    width: 30%;
+    margin-right: 2.5%;
+    border: 1px solid blueviolet;
+}

@@ -29,7 +29,7 @@
                     <input type="text" placeholder="Titulo" name="titulo">
                 </div>
                 <div class="x12 y20">
-                    <input type="text" placeholder="Descripcion" name="descripcion">
+                    <textarea rows="6" cols="81" placeholder="Descripcion" name="desc"></textarea>
                 </div>
                 <div>
                     <input type="file" name="file" class="">

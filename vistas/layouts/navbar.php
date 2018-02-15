@@ -9,7 +9,7 @@
             <a></a>
         </li>
         <li class="listItem">
-            <a href="#" class="nav-item">Blog</a>
+            <a href="/proyecto/vistas/posts/get.php" class="nav-item">Blog</a>
         </li>
         <li class="listItem">
             <a href="#" class="nav-item">Novedades</a>
