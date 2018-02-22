@@ -126,6 +126,11 @@ html {
     width: 100%;
 }
 
+hr {
+    border: none;
+    background-color: green;
+}
+
 body {
     background-image: url('../img/body-wallp.jpg');
     background-repeat: round;
@@ -196,15 +201,23 @@ body {
 
 .registration-container, .account-container {
     width: 33.33%;
-    margin-left: 33.33%;
+    float: left;
+    margin-right: 40px;
     height: min-content;
     padding: 15px 30px 30px 30px;
     float: left;
-    background-color: #A1DD9E;
+    background-color: transparent;   /*#A1DD9E;*/
     opacity: 0.8;
     color: green;
-    border: 2px solid #222;
-    border-radius: 5px;
+    border: none;
+    border-left: 3px solid green;
+}
+.inp input {
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid green;
+    padding-left: 3px;
+    color: green;   
 }
 
 .x6 {
@@ -315,4 +328,28 @@ body {
     width: 30%;
     margin-right: 2.5%;
     border: 1px solid blueviolet;
+}
+
+.intro {
+    width: 30%;
+    margin-right: 10%;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 30px;
+}
+.intro span {
+    color: green;
+}
+
+.slider {
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    margin-top: 15%; 
+}
+
+.row1 {
+    width: 90%;
+    display: -webkit-box;
+    height: 400px;
 }

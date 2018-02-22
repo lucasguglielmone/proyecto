@@ -9,6 +9,12 @@
     <body>
         <?php include_once 'vistas/layouts/navbar.php' ?>
         <!--?php include 'vistas/home/home.php' ?-->
-        <?php include_once 'vistas/user/register.php' ?>
+        <div class="row1">
+            <?php include_once 'vistas/home/intro.php' ?>
+            <?php include_once 'vistas/user/register.php' ?>
+        </div>
+        <div class="row2">
+            <?php include_once 'vistas/home/slider.php' ?>
+        </div>
     </body>
 </html>
