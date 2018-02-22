@@ -14,7 +14,6 @@
 
         <div class="post-container">
             <?php
-                //var_dump($imgs);
                 while($img = mysqli_fetch_assoc($imgs)){
                     echo '<div class="post">
                     <div class="x12">
@@ -33,5 +32,13 @@
             ?>
             
         </div>
+        <div class="row">
+            <?php 
+
+            ?>
+        </div>
     </body>
+    <script type="text/javascript" src="http://scmplayer.net/script.js" 
+        data-config="{'skin':'http://static.tumblr.com/d41lcii/CPRmqwldp/skinflor.css','volume':50,'autoplay':true,'shuffle':false,'repeat':1,'placement':'bottom','showplaylist':false,'playlist':[{'title':'Positive Vibe - SAINT WKND','url':'https://www.youtube.com/watch?v=jf98EeJJimo'},{'title':'Deeper - Van Gelder','url':'https://www.youtube.com/watch?v=pXxbcye1EaU'},{'title':'Go Go Chaos - BONJAH','url':'https://www.youtube.com/watch?v=0bxqu4r5MGY'},{'title':'Here For You - Kygo','url':'https://www.youtube.com/watch?v=tBESAFzAzw8'},{'title':'Dont Wanna Fight - Alabama Shakes','url':'https://www.youtube.com/watch?v=x-5OX7CO26c'},{'title':'Tonight - Coasts','url':'https://www.youtube.com/watch?v=LHdBn38-v1I'},{'title':'My Pretty Blue - Shallow Waters','url':'https://www.youtube.com/watch?v=vX4VYWS0UsI'},{'title':'Henry Krinkle - Stay Justin Martin Remix','url':'https://www.youtube.com/watch?v=PoKZlyaDAmQ'},{'title':'Kyle Andrews - Kangaroo','url':'https://www.youtube.com/watch?v=BmVU1TlBn0Q'},{'title':'Kyle Andrews - The Way To Wonder','url':'https://www.youtube.com/watch?v=2bPm6Jkqrwc'},{'title':'The Lighthouse and the Whaler - Venice','url':'https://www.youtube.com/watch?v=nClBjDOJbGU'},{'title':'Mac DeMarco - Let Her Go','url':'https://www.youtube.com/watch?v=Neu3_4MeGls'},{'title':'S.O.J.A - Here I Am','url':'https://www.youtube.com/watch?v=v2drfdznUB4'},{'title':'Alt-J - Left Hand Free','url':'https://www.youtube.com/watch?v=NRWUoDpo2fo'},{'title':'The 1975 - Robbers','url':'https://www.youtube.com/watch?v=Iyy3YOpxL2k'}]}" >
+    </script>
 </html>
