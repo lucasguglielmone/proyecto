@@ -28,12 +28,20 @@
                 </form>';
             }
             else {
-            echo '<li class="listItem">
-                <a href="/proyecto/vistas/user/micuenta.php" class="nav-item">Mi Cuenta</a>
+            echo '<li class="listItem myacc">
+                <div class="drop-down">
+                    <a href="/proyecto/vistas/user/micuenta.php" class="nav-item">Mi Cuenta</a>
+                    <div class="drop-down-content">
+                        <a href="/proyecto/vistas/user/upload.php">Nuevo Post</a>
+                        <form action="/proyecto/controller/logout.php" method="post" class="logoutformm">
+                            <input type="submit" name="submit" class="logout-btn" value="Log Out">
+                        </form>
+                    </div>
+                </div>
             </li>';
-            echo '<form action="/proyecto/controller/logout.php" method="post" class="login-form">
+            /*echo '<form action="/proyecto/controller/logout.php" method="post" class="login-form">
                 <input type="submit" name="submit" class="logout-btn" value="Log Out">
-            </form>';
+            </form>';*/
             } ?>
             <!--a href="/proyecto/vistas/user/login.php" class="nav-item nav-item-login">
                 Log in
@@ -46,3 +54,7 @@
         </li-->
     </ul>
 </nav>
+
+<section id="errors">
+    <?php include_once ($_SERVER['DOCUMENT_ROOT']."/proyecto/vistas/layouts/errors.php")?>
+</section>

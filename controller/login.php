@@ -9,7 +9,7 @@ session_start();
 
         // Revision de datos
         if(empty($email) || empty($pass)){
-            header("Location: /proyecto?nope");
+            header("Location: /proyecto?e=login");
             exit();
         }
 
@@ -27,14 +27,14 @@ session_start();
         $query = mysqli_query($conn, $sql_user);
         $result_check = mysqli_num_rows($query);
         if($result_check < 1) {
-            header("Location: /proyecto?noUser");
+            header("Location: /proyecto?e=noUser");
             exit();
         }
         else {
             if($user = mysqli_fetch_assoc($query)){
                 $encryptedPassCheck = password_verify($pass, $user['pass']);
                 if($encryptedPassCheck == false) {
-                    header("Location: /proyecto?pass");
+                    header("Location: /proyecto?e=pass");
                     exit();
                 }
                 elseif($encryptedPassCheck == true) {                       // LOG IN
@@ -42,7 +42,7 @@ session_start();
                     $_SESSION['u_nombre'] = $user['nombre'];
                     $_SESSION['u_apellido'] = $user['apellido'];
                     $_SESSION['u_email'] = $user['email'];
-                    header("Location: /proyecto?success=1");
+                    header("Location: /proyecto?e=success");
                     exit();
                 }
             }

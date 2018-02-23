@@ -2,7 +2,7 @@
 <?php
     if(empty($_SESSION)){
     echo '<div class="registration-container">
-        <h1>Register</h1>
+        <h1>Registrate</h1>
         <hr>
         <div class="box registration-form">
             <form action="/proyecto/controller/register.php" method="post">

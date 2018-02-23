@@ -11,22 +11,26 @@
 
         // Revision de datos
         if(empty($nombre) || empty($apellido) || empty($email) || empty($pass)){
-            header("Location: /proyecto?nope");
+            header("Location: /proyecto?e=campo_vacio");
             exit();
         }
         else {
             // Nombre y Apellido
-            if(!preg_match("/^[a-zA-Z]*$/", $nombre) || !preg_match("/^[a-zA-Z]*$/", $apellido) || !preg_match("/^[a-zA-Z]*$/", $nombre) ){
-                header("Location: /proyecto?signup=invalid");
+            if(!preg_match("/^[a-zA-Z]*$/", $nombre)){
+                header("Location: /proyecto?e=nombre");
+                exit();
+            }
+            if(!preg_match("/^[a-zA-Z]*$/", $apellido)){
+                header("Location: /proyecto?e=apellido");
                 exit();
             }
             // Email y Contraseña
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                header("Location: /proyecto?signup=email");
+                header("Location: /proyecto?e=email");
                 exit();
             }
             if($_POST['password'] != $_POST['password2']){
-                header("Location: /proyecto?signup=password2");
+                header("Location: /proyecto?e=pass_match");
                 exit();
             }
             else{
@@ -34,7 +38,7 @@
                 $result = mysqli_query($conn, $user_sql);
                 $result_check = mysqli_num_rows($result);
                 if($result_check ){ 
-                    header("Location: /proyecto?signup=user");
+                    header("Location: /proyecto?e=user");
                     exit();
                 }
             }
@@ -46,7 +50,7 @@
         $insert = mysqli_query($conn, $sql);
 
         if ($insert) {
-            header("Location: /proyecto?signup=success");
+            header("Location: /proyecto?e=reg_success");
             exit();
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
