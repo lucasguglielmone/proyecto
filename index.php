@@ -9,10 +9,13 @@
     <body>
         <?php include_once 'vistas/layouts/navbar.php' ?>
         <!--?php include 'vistas/home/home.php' ?-->
-        <div class="row1">
-            <?php include_once 'vistas/home/intro.php' ?>
-            <?php include_once 'vistas/user/register.php' ?>
-        </div>
+        <?php if(empty($_SESSION)){ ?>
+    
+            <div class="row1">
+                <?php include_once 'vistas/home/intro.php' ?>
+                <?php include_once 'vistas/user/register.php' ?>
+            </div>
+        <?php } ?>
         <div class="row2">
             <?php include_once 'vistas/home/slider.php' ?>
         </div>

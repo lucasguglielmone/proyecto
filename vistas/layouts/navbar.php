@@ -11,9 +11,6 @@
         <li class="listItem">
             <a href="/proyecto/vistas/posts/get.php" class="nav-item">Blog</a>
         </li>
-        <li class="listItem">
-            <a href="#" class="nav-item">Novedades</a>
-        </li class="listItem">
         <li class="pull-right listItem no-hover">
             <?php 
             if(empty($_SESSION)){

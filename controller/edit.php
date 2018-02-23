@@ -2,12 +2,14 @@
     if(isset($_POST['submit'])){
 
         include_once 'dbConect.php';
+        session_start();
 
         $nombre = mysqli_real_escape_string($conn, $_POST["nombre"]);
         $apellido = mysqli_real_escape_string($conn, $_POST["apellido"]);
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
         $pass = mysqli_real_escape_string($conn, $_POST["password"]);
-        $created_at = date('Y-m-d H:i:s');
+        $updated_at  = date('Y-m-d H:i:s');
+        $uid = $_SESSION['u_id'];
 
         // Revision de datos
         if(empty($nombre) || empty($apellido) || empty($email) || empty($pass)){
@@ -33,30 +35,29 @@
                 header("Location: /proyecto?e=pass_match");
                 exit();
             }
-            else{
-                $user_sql = "SELECT * FROM usuarios WHERE email='$email'";
-                $result = mysqli_query($conn, $user_sql);
-                $result_check = mysqli_num_rows($result);
-                if($result_check ){ 
-                    header("Location: /proyecto?e=user");
+
+            $user_sql = "SELECT * FROM usuarios WHERE email='$email'";
+            $result = mysqli_query($conn, $user_sql);
+            $result_check = mysqli_num_rows($result);
+            if($result_check ){ 
+                $pass_encrypted = password_hash($pass, PASSWORD_DEFAULT);
+                $sql = "UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', pass = '$pass_encrypted', email = '$email', updated_at = '$updated_at' WHERE id = '$uid';";
+                $insert = mysqli_query($conn, $sql);
+
+                if ($insert) {
+                    header("Location: /proyecto?e=edit_success");
                     exit();
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
+                
+                //mysqli_close($conn);
             }
+            
             
         }
 
-        $pass_encrypted = password_hash($pass, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuarios (nombre, apellido, pass, email, created_at, updated_at) VALUES ('$nombre', '$apellido', '$pass_encrypted', '$email', '$created_at', '$created_at');";
-        $insert = mysqli_query($conn, $sql);
-
-        if ($insert) {
-            header("Location: /proyecto?e=reg_success");
-            exit();
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
         
-        //mysqli_close($conn);
         
     }
     else {

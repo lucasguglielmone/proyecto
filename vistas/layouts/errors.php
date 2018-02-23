@@ -40,6 +40,14 @@
             $msg = 'estas logeado';
             $type = 'Exito';
         }
+        elseif ($e == "edit_success"){
+            $msg = 'cuenta editada';
+            $type = 'Exito';
+        }
+        elseif ($e == 'delOk'){
+            $msg = 'post borrado';
+            $type = 'Exito';
+        }
         $div = '
         <div class="'. $type .'">
             <span><strong style="margin-right:3px;">'. $type .'!</strong>'. $msg .'</span>

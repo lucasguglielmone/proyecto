@@ -19,15 +19,15 @@
                     echo '<div class="post" id="post-'. $img["id"] .'">
                     <div class="x12 title">
                         <h1>'. $img["nombre"] .' </h1>
-                        <button class="pull-right close-btn" onclick="toggleDisplay('. "'". "post-". $img["id"] . "'" .')">X</button>
+                        <a class="pull-right close-btn" href="../../controller/delete.php?id='. $img["id"] . '">X</a>
                     </div>
                     <div class="img-container">
                         <img src="'. "/proyecto/public/uploads/".$img["ruta"] .'" alt="">
                     </div>
                     <div>
-                        <span class="leermas">
+                        <a href="/proyecto/controller/view.php?id='.$img["id"] .'" class="leermas">
                             Leer mas
-                        </span>
+                        </a>
                     </div>
                 </div>';
                 }

@@ -24,9 +24,9 @@
                             <img src="'. "/proyecto/public/uploads/".$img["ruta"] .'" alt="">
                         </div>
                         <div>
-                            <span class="leermas">
+                        <a href="/proyecto/controller/view.php?id='.$img["id"] .'" class="leermas">
                                 Leer mas
-                            </span>
+                            </a>
                         </div>
                     </div>';
                 }

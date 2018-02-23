@@ -1,33 +1,18 @@
 <?php
-
-use models\posts;
-
-/*
-foreach ($posts as $post) {
-    
-}*/
-
-
-function displayPost($request){
-    $title = $request->title;
-    $description = $request->description;
-    $body = $request->body;
-    $date = $request->created_at;
-    $post = <<<com   
-        <div class="post-element">
-            <img src="" alt="">
-            <h3 class="">$title</h3>
-            <p class="">$description</p>
-            <hr>
-            <div class="">
-                $body
-            </div>
-            <hr>
-            <div class="">
-
-            </div>
+    $img = mysqli_fetch_assoc($img);
+    echo '<div class="post only" id="post-'. $img["id"] .'">
+        <div class="x12 title">
+            <h1>'. $img["nombre"] .' </h1>
+            <button class="pull-right close-btn" onclick="toggleDisplay('. "'". "post-". $img["id"] . "'" .')">X</button>
         </div>
-com;
-}
+        <div class="img-container">
+            <img src="'. "/proyecto/public/uploads/".$img["ruta"] .'" alt="">
+        </div>
+        <div>
+            <span class="descr">
+                '. $img['descr'] .'
+            </span>
+        </div>
+    </div>';
 
 ?>

@@ -14,12 +14,13 @@
         <div class="account-container" id="acc">
             <div>
                 <h1>¡Hola <?php echo $_SESSION['u_nombre'] ?>!</h1>
-                <span>Editar Cuenta</span>
+                <hr>
+                <a href="/proyecto/vistas/user/editar.php" class="btn btn-edit">Editar Cuenta</a>
             </div>
             <hr>
-            <a class="" href="/proyecto/vistas/posts/misposts.php">Ver mis posts</span>
+            <a class="btn btn-edit" href="/proyecto/vistas/posts/misposts.php">Ver mis posts</a>
             <hr>
-            <button type="button" id="newp" class="btn" onclick="toggleDisplay()">Nuevo Post!</button>
+            <button type="button" id="newp" class="btn btn-edit" onclick="toggleDisplay()">Nuevo Post!</button>
         </div>
 
         <div id="pos" style="display:none;">
