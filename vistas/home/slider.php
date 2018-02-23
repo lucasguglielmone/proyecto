@@ -8,8 +8,10 @@
 
 <div class="slider">
     <?php
-    while($img = mysqli_fetch_assoc($imgs)){
-        echo '<img src="'. 'public/uploads/' . $img["ruta"] .'" alt="img" height="auto" width="25%" class="mySlides" id="post-'. $img["id"] .'"/>';
+    if(!empty($imgs)){
+        while($img = mysqli_fetch_assoc($imgs)){
+            echo '<img src="'. 'public/uploads/' . $img["ruta"] .'" alt="img" height="auto" width="25%" class="mySlides" id="post-'. $img["id"] .'"/>';
+        }
     }
     ?>
 </div>
