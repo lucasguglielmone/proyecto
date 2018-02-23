@@ -31,7 +31,7 @@
                     <div class="drop-down-content">
                         <a href="/proyecto/vistas/user/upload.php">Nuevo Post</a>
                         <form action="/proyecto/controller/logout.php" method="post" class="logoutformm">
-                            <input type="submit" name="submit" class="logout-btn" value="Log Out">
+                            <input type="submit" name="submit" class="logout-btn" value="Cerrar Sesion">
                         </form>
                     </div>
                 </div>

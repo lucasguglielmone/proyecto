@@ -21,7 +21,7 @@
                 <div class="x12 inp">
                     <input type="password" placeholder="Confirmar contraseña" name="password2">
                 </div>
-                <input type="submit" name="submit" class="form-btn">
+                <input type="submit" name="submit" class="form-btn" value="Registrarme!">
             </form>
         </div>
     </div>';
