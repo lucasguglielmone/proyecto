@@ -43,13 +43,6 @@
     </body>
 </html>
 <script>
-    function toggleDisplay(){
-        document.getElementById('acc').style.display = 'none';
-        document.getElementById('pos').style.display = 'block';
-    }
-    function toggleDisplayBack(){
-        document.getElementById('pos').style.display = 'none';
-        document.getElementById('acc').style.display = 'block';
-    }
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/proyecto/public/js/display.php' ?>
 
 </script>
